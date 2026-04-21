@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokenizer_evaluator"
+version = "0.2.0"
+description = "CLI and library utilities for evaluating tokenizer fidelity and efficiency."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Souvik Rana"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "datasets>=2.20",
+    "huggingface_hub>=0.24",
+    "python-dotenv>=1.0",
+    "rapidfuzz>=3.9",
+    "sentencepiece>=0.1.99",
+    "tiktoken>=0.7",
+    "tokenizers>=0.15",
+    "tqdm>=4.66",
+    "transformers>=4.41",
+]
+
+[project.scripts]
+tok-eval = "tokenizer_evaluator.main:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["tokenizer_evaluator", "tokenizer_evaluator.*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"

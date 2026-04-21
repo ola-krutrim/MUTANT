@@ -1,0 +1,27 @@
+{
+  "tokenizers": [
+    {
+      "id": "llama3",
+      "label": "Llama 3",
+      "source": "hf",
+      "path": "meta-llama/Meta-Llama-3-8B-Instruct",
+      "description": "Example Hugging Face tokenizer entry",
+      "decode_mode": "byte_level"
+    },
+    {
+      "id": "local-fast",
+      "label": "Local Fast Tokenizer",
+      "source": "fast",
+      "path": "/absolute/path/to/tokenizer.json",
+      "description": "Example local tokenizer.json entry",
+      "decode_mode": "byte_level"
+    },
+    {
+      "id": "local-spm",
+      "label": "Local SentencePiece",
+      "source": "spm",
+      "path": "/absolute/path/to/tokenizer.model",
+      "description": "Example SentencePiece entry"
+    }
+  ]
+}
